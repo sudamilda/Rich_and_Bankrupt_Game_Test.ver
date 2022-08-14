@@ -1,0 +1,7 @@
+C:\Users\admin\Desktop\Rich_and_Bankrupt_Game\chapter\chapter\bin\Debug\chapter.exe.config
+C:\Users\admin\Desktop\Rich_and_Bankrupt_Game\chapter\chapter\bin\Debug\chapter.exe
+C:\Users\admin\Desktop\Rich_and_Bankrupt_Game\chapter\chapter\bin\Debug\chapter.pdb
+C:\Users\admin\Desktop\Rich_and_Bankrupt_Game\chapter\chapter\obj\Debug\chapter.csproj.AssemblyReference.cache
+C:\Users\admin\Desktop\Rich_and_Bankrupt_Game\chapter\chapter\obj\Debug\chapter.csproj.CoreCompileInputs.cache
+C:\Users\admin\Desktop\Rich_and_Bankrupt_Game\chapter\chapter\obj\Debug\chapter.exe
+C:\Users\admin\Desktop\Rich_and_Bankrupt_Game\chapter\chapter\obj\Debug\chapter.pdb
