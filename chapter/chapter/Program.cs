@@ -42,12 +42,13 @@ namespace chapter
 구매하지 않을 것이라면 엔터키를 입력해주십시오.
 정보의 가격은 당신이 가진 현금의 5%입니다.");
 
-            // 리스트 섞은 후 첫번째 값만 갖고오기
+            // 리스트 내 랜덤 정보 추출
             Random random = new Random();
             int i = datalist.Count;
-            int rnd = random.Next(0, i);
-            // Console.WriteLine(i); -> datalist 몇개인지 카운트 확인
-            // Console.WriteLine(rnd); -> 0 ~ i-1의 값 랜덤 생성인지 확인
+            int rnd = random.Next(0, i-1);
+            Console.WriteLine(i); //-> datalist 몇개인지 카운트 확인
+            Console.WriteLine(rnd); //-> 0 ~ i-1의 값 랜덤 생성인지 확인
+            var random_information = datalist[rnd];
 
 
             string purchase_information = Console.ReadLine(); // 시간 되면 bool형으로 고쳐보자
@@ -57,14 +58,8 @@ namespace chapter
                 double _cash = Math.Round(cash * 0.95); // 전역변수 cash를 받아와 95%값을 남긴 뒤, 소숫점 절감
                 cash = (int)_cash; // double형이 되어버린 cash를 다시 int형으로 전환
 
-                // 랜덤으로 datan 갖고와야
+                Console.WriteLine(random_information.main_information); // datalist내 main_information 불러옴
 
-
-
-                foreach (var a in datalist)
-                {
-                    Console.WriteLine(a.main_information); // datalist내 main_information 불러옴
-                }
             }
 
 
@@ -83,19 +78,5 @@ namespace chapter
             public float realestate_change; // 정보에 따른 부동산 가격 변화율
         }
 
-        /* 리스트 랜덤하게 섞는건데 인터넷에서 갖고옴 -> 이걸 쓸지는 미지수
-        public static List<T> Shuffle<T>(List<T> list)
-        {
-            for (int i = list.Count - 1; i > 0; i--)
-            {
-                Random random = new Random(Guid.NewGuid().GetHashCode());
-                int rnd = random.Next(0, i);
-                T temp = list[i];
-                list[i] = list[rnd];
-                list[rnd] = temp;
-            }
-            return list;
-        }
-        */
     }
 }
