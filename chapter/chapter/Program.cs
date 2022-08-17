@@ -22,13 +22,18 @@ namespace chapter
             data1.realestate_information = "신축공장부지 가격 상승";
             data1.realestate_change = 1.3f;
             datalist.Add(data1);
-            
-            /*
-            foreach (var i in datalist)
-            {
-                Console.WriteLine(i.main_information); // datalist내 main_information 불러옴 -> 확인
-            }
-            */
+
+            Data data2 = new Data();
+            data2.main_information = "SY111그룹, 신규 제품 생산을 위한 공장 건설 계획 발표";
+            data2.materials_information = "공장 건설을1111 위한 원재료 가격 상승";
+            data2.materials_change = 1.1f;
+            data2.product_information = "변11화 없음";
+            data2.product_change = 1f;
+            data2.stock_information = "신제11품 기대로 인한 주식 상승";
+            data2.stock_change = 1.3f;
+            data2.realestate_information = "신축공11장부지 가격 상승";
+            data2.realestate_change = 1.3f;
+            datalist.Add(data2);
 
             int cash = 1000; // 복붙할 때 버릴 것
 
@@ -36,18 +41,29 @@ namespace chapter
 이번 챕터에서 정보를 구매하시겠습니까? 구매하실것이라면 'YES' 라고 입력해주십시오.
 구매하지 않을 것이라면 엔터키를 입력해주십시오.
 정보의 가격은 당신이 가진 현금의 5%입니다.");
+
+            // 리스트 섞은 후 첫번째 값만 갖고오기
+            Random random = new Random();
+            int i = datalist.Count;
+            int rnd = random.Next(0, i);
+            // Console.WriteLine(i); -> datalist 몇개인지 카운트 확인
+            // Console.WriteLine(rnd); -> 0 ~ i-1의 값 랜덤 생성인지 확인
+
+
             string purchase_information = Console.ReadLine(); // 시간 되면 bool형으로 고쳐보자
 
             if (purchase_information == "YES") // 구매한다고 선택한 경우 가진 현금의 5%를 소비
             {
                 double _cash = Math.Round(cash * 0.95); // 전역변수 cash를 받아와 95%값을 남긴 뒤, 소숫점 절감
                 cash = (int)_cash; // double형이 되어버린 cash를 다시 int형으로 전환
-                
+
                 // 랜덤으로 datan 갖고와야
 
-                foreach (var i in datalist)
+
+
+                foreach (var a in datalist)
                 {
-                    Console.WriteLine(i.main_information); // datalist내 main_information 불러옴
+                    Console.WriteLine(a.main_information); // datalist내 main_information 불러옴
                 }
             }
 
@@ -66,5 +82,20 @@ namespace chapter
             public string realestate_information; // 부동산 정보
             public float realestate_change; // 정보에 따른 부동산 가격 변화율
         }
+
+        /* 리스트 랜덤하게 섞는건데 인터넷에서 갖고옴 -> 이걸 쓸지는 미지수
+        public static List<T> Shuffle<T>(List<T> list)
+        {
+            for (int i = list.Count - 1; i > 0; i--)
+            {
+                Random random = new Random(Guid.NewGuid().GetHashCode());
+                int rnd = random.Next(0, i);
+                T temp = list[i];
+                list[i] = list[rnd];
+                list[rnd] = temp;
+            }
+            return list;
+        }
+        */
     }
 }

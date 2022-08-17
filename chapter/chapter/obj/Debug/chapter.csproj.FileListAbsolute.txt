@@ -5,3 +5,10 @@ C:\Users\admin\Desktop\Rich_and_Bankrupt_Game\chapter\chapter\obj\Debug\chapter.
 C:\Users\admin\Desktop\Rich_and_Bankrupt_Game\chapter\chapter\obj\Debug\chapter.csproj.CoreCompileInputs.cache
 C:\Users\admin\Desktop\Rich_and_Bankrupt_Game\chapter\chapter\obj\Debug\chapter.exe
 C:\Users\admin\Desktop\Rich_and_Bankrupt_Game\chapter\chapter\obj\Debug\chapter.pdb
+C:\Users\hotst\OneDrive\바탕 화면\Rich_and_Bankrupt_Game\chapter\chapter\bin\Debug\chapter.exe.config
+C:\Users\hotst\OneDrive\바탕 화면\Rich_and_Bankrupt_Game\chapter\chapter\bin\Debug\chapter.exe
+C:\Users\hotst\OneDrive\바탕 화면\Rich_and_Bankrupt_Game\chapter\chapter\bin\Debug\chapter.pdb
+C:\Users\hotst\OneDrive\바탕 화면\Rich_and_Bankrupt_Game\chapter\chapter\obj\Debug\chapter.csproj.AssemblyReference.cache
+C:\Users\hotst\OneDrive\바탕 화면\Rich_and_Bankrupt_Game\chapter\chapter\obj\Debug\chapter.csproj.CoreCompileInputs.cache
+C:\Users\hotst\OneDrive\바탕 화면\Rich_and_Bankrupt_Game\chapter\chapter\obj\Debug\chapter.exe
+C:\Users\hotst\OneDrive\바탕 화면\Rich_and_Bankrupt_Game\chapter\chapter\obj\Debug\chapter.pdb
