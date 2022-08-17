@@ -5,3 +5,10 @@ C:\Users\admin\Desktop\Rich_and_Bankrupt_Game\Rich_and_Bankrupt\Rich_and_Bankrup
 C:\Users\admin\Desktop\Rich_and_Bankrupt_Game\Rich_and_Bankrupt\Rich_and_Bankrupt\bin\Debug\Rich_and_Bankrupt.pdb
 C:\Users\admin\Desktop\Rich_and_Bankrupt_Game\Rich_and_Bankrupt\Rich_and_Bankrupt\obj\Debug\Rich_and_Bankrupt.exe
 C:\Users\admin\Desktop\Rich_and_Bankrupt_Game\Rich_and_Bankrupt\Rich_and_Bankrupt\obj\Debug\Rich_and_Bankrupt.pdb
+C:\Users\hotst\OneDrive\바탕 화면\Rich_and_Bankrupt_Game\Rich_and_Bankrupt\Rich_and_Bankrupt\bin\Debug\Rich_and_Bankrupt.exe.config
+C:\Users\hotst\OneDrive\바탕 화면\Rich_and_Bankrupt_Game\Rich_and_Bankrupt\Rich_and_Bankrupt\bin\Debug\Rich_and_Bankrupt.exe
+C:\Users\hotst\OneDrive\바탕 화면\Rich_and_Bankrupt_Game\Rich_and_Bankrupt\Rich_and_Bankrupt\bin\Debug\Rich_and_Bankrupt.pdb
+C:\Users\hotst\OneDrive\바탕 화면\Rich_and_Bankrupt_Game\Rich_and_Bankrupt\Rich_and_Bankrupt\obj\Debug\Rich_and_Bankrupt.csproj.AssemblyReference.cache
+C:\Users\hotst\OneDrive\바탕 화면\Rich_and_Bankrupt_Game\Rich_and_Bankrupt\Rich_and_Bankrupt\obj\Debug\Rich_and_Bankrupt.csproj.CoreCompileInputs.cache
+C:\Users\hotst\OneDrive\바탕 화면\Rich_and_Bankrupt_Game\Rich_and_Bankrupt\Rich_and_Bankrupt\obj\Debug\Rich_and_Bankrupt.exe
+C:\Users\hotst\OneDrive\바탕 화면\Rich_and_Bankrupt_Game\Rich_and_Bankrupt\Rich_and_Bankrupt\obj\Debug\Rich_and_Bankrupt.pdb

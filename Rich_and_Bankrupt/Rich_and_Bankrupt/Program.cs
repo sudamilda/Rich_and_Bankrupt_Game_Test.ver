@@ -8,16 +8,18 @@ namespace Rich_and_Bankrupt
 {
     class Program
     {
-        static int cash = 1000;
-        static int materials = 0;
-        static int product = 0;
-        static int stock = 0;
-        static int realestate = 0;
+        // List assets 구성 원소 <cash, materials, product, stock, realestate> <현금, 원재료, 제품, 주식, 부동산>
+        public static int cash = 1000;
+        public static int materials=0;
+        public static int product=0;
+        public static int stock=0;
+        public static int realestate=0;
+
+
         static void Main(string[] args)
         {
-            // List assets 구성 원소 <cash, materials, product, stock, realestate> <현금, 원재료, 제품, 주식, 부동산>
-
             List<int> assets = new List<int>();
+
             assets.Add(cash); // 현금, 천만원이나 일단 구현이 되는지 확인을 위해 만원 단위를 생략하여 작성함
             assets.Add(materials); // 원재료
             assets.Add(product); // 제품
@@ -25,6 +27,8 @@ namespace Rich_and_Bankrupt
             assets.Add(realestate); // 부동산
 
             long totalassets = assets.Sum(); // totalassets = assets list내 모든 원소의 합이고, 게임이 현금만 21억일 때, 종료되므로 더 큰 자료형 long 사용
+            
+            // Console.WriteLine(totalassets); totalassets가 밖에 있으면 합이 0이 되어 안됨
 
             Console.WriteLine(@"안녕하십니까. 부자와 파산게임에 오신 것을 환영합니다. 게임 규칙을 설명드리겠습니다.
 유동자산은 현금화할 가능성이 높다는 의미, 반대로 비유동자산은 현금화할 가능성이 낮다는 의미를 가집니다.
@@ -40,8 +44,8 @@ namespace Rich_and_Bankrupt
 21억을 보유하여 게임에서 승리하면 30층 빌딩을 구매하여 부자가 됩니다.
 꿈의 빌딩, 30층 빌딩을 자신의 자산으로 만드십시오!
 ");
-
-            /*foreach (int i in assets)
+            /*
+            foreach (int i in assets)
             {
                 Console.WriteLine(i); // assets 출력되는지 확인->완료
             }
@@ -108,8 +112,8 @@ namespace Rich_and_Bankrupt
             Random random = new Random();
             int i = datalist.Count;
             int rnd = random.Next(0, i - 1);
-            Console.WriteLine(i); //-> datalist 몇개인지 카운트 확인
-            Console.WriteLine(rnd); //-> 0 ~ i-1의 값 랜덤 생성인지 확인
+            // Console.WriteLine(i); //-> datalist 몇개인지 카운트 확인
+            // Console.WriteLine(rnd); //-> 0 ~ i-1의 값 랜덤 생성인지 확인
             var random_information = datalist[rnd];
 
 
@@ -118,16 +122,23 @@ namespace Rich_and_Bankrupt
             if (purchase_information == "YES") // 구매한다고 선택한 경우 가진 현금의 5%를 소비
             {
                 double _cash = Math.Round(cash * 0.95); // 전역변수 cash를 받아와 95%값을 남긴 뒤, 소숫점 절감
-                cash = (int)_cash; // double형이 되어버린 cash를 다시 int형으로 전환
+                cash = (int) _cash; // double형이 되어버린 cash를 다시 int형으로 전환
 
                 Console.WriteLine(random_information.main_information); // datalist내 main_information 불러옴
             }
 
             // 챕터 진입 마감
 
-            // [A] 투자 진행 진입
+            // [A] 투자 진행
+            Investment();
 
-            // [A] 투자 진행 마감
+            // [B] 판매 진행
+            Sale();
+
+            // [C] 자본 가치 변동 진행
+            Valuechange();
+
+            // 챕터 마감
         }
 
 
@@ -143,5 +154,55 @@ namespace Rich_and_Bankrupt
             public string realestate_information; // 부동산 정보
             public float realestate_change; // 정보에 따른 부동산 가격 변화율
         }
+        public static void Investment()
+        {
+            // 현재 각 항목 보유 가치 출력
+            Console.WriteLine("현재 당신이 보유한 각 항목별 보유가치입니다.");
+            Console.Write("현금 현재 보유 금액: ");
+            Console.WriteLine(cash);
+            Console.Write("원재료 현재 보유 금액: ");
+            Console.WriteLine(materials);
+            Console.Write("제품 현재 보유 금액: ");
+            Console.WriteLine(product);
+            Console.Write("주식 현재 보유 금액: ");
+            Console.WriteLine(stock);
+            Console.Write("부동산 현재 보유 금액: ");
+            Console.WriteLine(realestate);
+
+            // 각 항목 투자금 입력 받기
+            Console.WriteLine("이제 각 항목별로 투자금을 입력해주십시오. 현금은 투자만 할 뿐 투자받지 않습니다.");
+
+            Console.Write("원재료 투자 금액: ");
+            string _investment_materials = Console.ReadLine(); // 원재료 투자 받음 
+            int investment_materials = int.Parse(_investment_materials);
+
+            Console.Write("제품 투자 금액: ");
+            string _investment_product = Console.ReadLine(); // 제품 투자 받음 
+            int investment_product = int.Parse(_investment_product);
+
+            Console.Write("주식 투자 금액: ");
+            string _investment_stock = Console.ReadLine(); // 주식 투자 받음 
+            int investment_stock = int.Parse(_investment_stock);
+
+            Console.Write("부동산 투자 금액: ");
+            string _investment_realestate = Console.ReadLine(); // 부동산 투자 받음 
+            int investment_realestate = int.Parse(_investment_realestate);
+
+            // 투자한 금액이 cash 현금에서 빠져 나감
+            cash = cash -investment_materials- investment_product- investment_stock- investment_realestate;
+            Console.WriteLine("투자가 종료되었습니다.");
+        }
+
+        public static void Sale()
+        {
+
+        }
+
+        public static void Valuechange()
+        {
+
+        }
     }
+
+
 }
