@@ -189,7 +189,7 @@ namespace Rich_and_Bankrupt
             int investment_realestate = int.Parse(_investment_realestate);
 
             // 투자한 금액이 cash 현금에서 빠져 나감
-            cash = cash -investment_materials- investment_product- investment_stock- investment_realestate;
+            cash = cash - investment_materials - investment_product - investment_stock - investment_realestate;
             Console.WriteLine("투자가 종료되었습니다.");
         }
 
