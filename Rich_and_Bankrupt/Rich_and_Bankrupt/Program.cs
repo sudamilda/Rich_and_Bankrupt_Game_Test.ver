@@ -38,14 +38,15 @@ namespace Rich_and_Bankrupt
             {
                 Chapter(); // Chapter 불러옴
 
-                if (cash <= 0 || totalassets < 300 || cash >= 21000)
+                if (cash <= 0 || totalassets < 300 || cash >= 210000)
                 {
-                    break; // chapter를 반복하여 돌다가 조건이 만족하면 게임이 종료된다. 
+                    break; // Chapter를 반복하여 돌다가 조건이 만족하면 게임이 종료된다. 
                 }
             }
             if (cash <= 0 || totalassets < 300)
             {
-                Console.WriteLine(@"EDLDEEEEEEEEEDEDEDDDDDDDDEEEDDGGDDDDfLDDEDLEEjGEEKEEEKKKKKWWKWKKEWKKKLEEDGDDjGj:D, :.   .;LfLf;fG,GD
+                Console.WriteLine(@"
+EDLDEEEEEEEEEDEDEDDDDDDDDEEEDDGGDDDDfLDDEDLEEjGEEKEEEKKKKKWWKWKKEWKKKLEEDGDDjGj:D, :.   .;LfLf;fG,GD
 ELDEEDEEEEDEEEEEDEEDDDDEDEEGGEGGDGLDGLEGLEtKDDEEEKWKKWWKKKKKEWWKKEKKEKGDEEDGLGLED .,:i  ,.LifLjGDDtD
 DDD,GEEEDDEDEEEEEDEEDDEDDDEDEDGGDLGLLDEDGGEEDDEDKKKWKWWWKKKKKKKKKKKEEEDKEEGDLLDGD :jL.. tLGjtGLfGiGG
 Ef,tEEEDDDEEEEEDDEEDDEDGEGGLEEDDfLGLGGELLLGLDEEEKKKWWWWKKKKKKKWKKKEEEKGEEKEfjtDDD. fL  .jtGjff;EDtDD
@@ -298,10 +299,10 @@ WWWWW#W##WW#WWWWWW########WWKKWKWWKWWKWKKKK#KWKWKKKKWKKKKWKWW#WWWKKKWWW###WW##W#
             // 리스트 내 랜덤 정보 추출
             Random random = new Random();
             int i = datalist.Count; // 데이터 몇 개인지 카운트
-            int rnd = random.Next(0, i); // 0번부터 데이터 갯수-1까지 중 하나의 데이터가 랜덤 결정 ???? 왜 i-1이 아니지?
+            int rnd = random.Next(0, i); // 0번부터 데이터 갯수
             // Console.WriteLine(i); //-> datalist 몇개인지 카운트 확인
             // Console.WriteLine(rnd); //-> 0 ~ i의 값 랜덤 생성인지 확인
-            var random_information = datalist[rnd];
+            var random_information = datalist[rnd]; // data1,data2...중 랜덤으로 하나를 갖고온 random_information
 
             string purchase_information = Console.ReadLine(); // 시간 되면 bool형으로 고쳐보자
 
@@ -322,6 +323,7 @@ WWWWW#W##WW#WWWWWW########WWKKWKWWKWWKWKKKK#KWKWKKKKWKKKKWKWW#WWWKKKWWW###WW##W#
             Sale();
 
             // [C] 자본 가치 변동 진행
+
             Console.WriteLine("이번 챕터의 각 자산별 정보입니다.");
 
             Console.WriteLine(random_information.materials_information); // datalist내 materials_information 불러옴
@@ -340,6 +342,7 @@ WWWWW#W##WW#WWWWWW########WWKKWKWWKWWKWKKKK#KWKWKKKKWKKKKWKWW#WWWKKKWWW###WW##W#
             double _realestate = Math.Round(realestate * random_information.realestate_change);
             realestate = (int)_realestate;
 
+            Console.WriteLine(" ");
             Console.WriteLine("챕터를 마친 현재 당신이 보유한 각 항목별 보유가치입니다.");
             Console.Write("현금 현재 보유 금액: ");
             Console.WriteLine(cash);
@@ -383,6 +386,7 @@ WWWWW#W##WW#WWWWWW########WWKKWKWWKWWKWKKKK#KWKWKKKKWKKKKWKWW#WWWKKKWWW###WW##W#
             Console.WriteLine(stock);
             Console.Write("부동산 현재 보유 금액: ");
             Console.WriteLine(realestate);
+            Console.WriteLine(" ");
 
             // 각 항목 투자금 입력 받기
             Console.WriteLine("이제 각 항목별로 투자금을 입력해주십시오. 현금은 투자만 할 뿐 투자받지 않습니다.");
@@ -410,6 +414,8 @@ WWWWW#W##WW#WWWWWW########WWKKWKWWKWWKWKKKK#KWKWKKKKWKKKKWKWW#WWWKKKWWW###WW##W#
             // 투자한 금액이 cash 현금에서 빠져 나감
             cash = cash - investment_materials - investment_product - investment_stock - investment_realestate;
             Console.WriteLine("투자가 종료되었습니다.");
+            Console.WriteLine(" ");
+
         }
 
         public static void Sale()
@@ -426,6 +432,8 @@ WWWWW#W##WW#WWWWWW########WWKKWKWWKWWKWKKKK#KWKWKKKKWKKKKWKWW#WWWKKKWWW###WW##W#
             Console.WriteLine(stock);
             Console.Write("부동산 현재 보유 금액: ");
             Console.WriteLine(realestate);
+            Console.WriteLine(" ");
+
 
             // 각 항목 판매금 입력 받기
             Console.WriteLine(@"이제 각 항목별로 판매금을 입력해주십시오. 
@@ -474,6 +482,8 @@ WWWWW#W##WW#WWWWWW########WWKKWKWWKWWKWKKKK#KWKWKKKKWKKKKWKWW#WWWKKKWWW###WW##W#
             }
 
             Console.WriteLine("판매가 종료되었습니다.");
+            Console.WriteLine(" ");
+
 
             /* 현재 각 항목 보유 가치 출력 -> 현재까지 오류 없는지 확인 -> 문제 없음
             Console.WriteLine("현재 당신이 보유한 각 항목별 보유가치입니다.");
